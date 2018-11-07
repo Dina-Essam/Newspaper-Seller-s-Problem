@@ -122,3 +122,17 @@ E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\Newsp
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.Properties.Resources.resources
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.GenerateResource.Cache
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerTesting.dll
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.exe.config
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.exe
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerSimulation.pdb
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerModels.dll
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerTesting.dll
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\bin\Debug\NewspaperSellerModels.pdb
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csprojAssemblyReference.cache
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.Form1.resources
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.Properties.Resources.resources
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.GenerateResource.cache
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.csproj.CopyComplete
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.exe
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerSimulation\obj\Debug\NewspaperSellerSimulation.pdb
