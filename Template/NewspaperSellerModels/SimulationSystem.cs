@@ -192,7 +192,7 @@ namespace NewspaperSellerModels
         public void fillTable()
         {
             Random rand = new Random();
-            for (int i = 1; i <= NumOfRecords; i++)
+            for (int i = 1; i <= 20; i++)
             {
 
                 SimulationCase sc = new SimulationCase();
