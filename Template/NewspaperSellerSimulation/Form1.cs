@@ -27,5 +27,7 @@ namespace NewspaperSellerSimulation
             String TestingResult = TestingManager.Test(SS,Constants.FileNames.TestCase1);
             MessageBox.Show(TestingResult);
         }
+
+        
     }
 }
