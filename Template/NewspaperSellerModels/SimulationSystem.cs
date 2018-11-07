@@ -192,7 +192,7 @@ namespace NewspaperSellerModels
         public void fillTable()
         {
             Random rand = new Random();
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= NumOfRecords; i++)
             {
 
                 SimulationCase sc = new SimulationCase();
@@ -266,7 +266,7 @@ namespace NewspaperSellerModels
                 else if (NumOfNewspapers > sc.Demand)
                 {
                     sc.SalesProfit = sc.Demand * SellingPrice;
-                    sc.ScrapProfit = (NumOfNewspapers - sc.Demand) * SellingPrice;
+                    sc.ScrapProfit = (NumOfNewspapers - sc.Demand) * ScrapPrice;
                     sc.LostProfit = 0;
                 }
                 sc.DailyNetProfit = sc.SalesProfit - sc.DailyCost - sc.LostProfit + sc.ScrapProfit;

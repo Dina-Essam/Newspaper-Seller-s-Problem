@@ -26,7 +26,7 @@ namespace NewspaperSellerSimulation
             SS.ReadINPUT(TestCasePath.SelectedItem.ToString());
             SS.fillTable();
             SS.FillPerformanceMeasures();
-            String TestingResult = TestingManager.Test(SS, Constants.FileNames.TestCase1);
+            String TestingResult = TestingManager.Test(SS, Constants.FileNames.TestCase3);
             MessageBox.Show(TestingResult);
             /////////////Clear data/////////////
             dataGridView1.Rows.Clear();
@@ -36,7 +36,7 @@ namespace NewspaperSellerSimulation
             dataGridView3.Rows.Clear();
             dataGridView3.Refresh();
             // dataGridView3.Rows.Add(SS.NumOfRecords);
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < SS.NumOfRecords; i++)
             {
                 dataGridView3.Rows.Add(1);
                 dataGridView3.Rows[i].Cells[0].Value = SS.SimulationTable.ElementAt(i).DayNo;
