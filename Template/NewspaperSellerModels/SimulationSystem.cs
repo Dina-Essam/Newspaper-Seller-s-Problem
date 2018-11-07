@@ -31,34 +31,53 @@ namespace NewspaperSellerModels
         ////////////// FillInput /////////////
         private void DistributionsOfNewsDays()
         {
+
             DayTypeDistributions.ElementAt(0).CummProbability = DayTypeDistributions.ElementAt(0).Probability;
-            DayTypeDistributions.ElementAt(0).MinRange = 0;
+            DayTypeDistributions.ElementAt(0).MinRange = 1;
             DayTypeDistributions.ElementAt(0).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(0).CummProbability * 100);
 
-            DayTypeDistributions.ElementAt(1).CummProbability = DayTypeDistributions.ElementAt(1).Probability+ DayTypeDistributions.ElementAt(0).CummProbability;
-            DayTypeDistributions.ElementAt(1).MinRange = DayTypeDistributions.ElementAt(0).MaxRange +1;
-            DayTypeDistributions.ElementAt(1).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(1).CummProbability * 100);
+            DayTypeDistributions.ElementAt(1).CummProbability = DayTypeDistributions.ElementAt(1).Probability + DayTypeDistributions.ElementAt(0).CummProbability;
+            if (DayTypeDistributions.ElementAt(1).Probability == 0)
+            {
+                DayTypeDistributions.ElementAt(1).MinRange = DayTypeDistributions.ElementAt(0).MaxRange;
+                DayTypeDistributions.ElementAt(1).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(1).CummProbability * 100);
+            }
+            else
+            {
+                DayTypeDistributions.ElementAt(1).MinRange = DayTypeDistributions.ElementAt(0).MaxRange + 1;
+                DayTypeDistributions.ElementAt(1).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(1).CummProbability * 100);
+            }
+
 
             DayTypeDistributions.ElementAt(2).CummProbability = DayTypeDistributions.ElementAt(2).Probability + DayTypeDistributions.ElementAt(1).CummProbability;
-            DayTypeDistributions.ElementAt(2).MinRange = DayTypeDistributions.ElementAt(1).MaxRange + 1;
-            DayTypeDistributions.ElementAt(2).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(2).CummProbability * 100);
+            if (DayTypeDistributions.ElementAt(2).Probability == 0)
+            {
+                DayTypeDistributions.ElementAt(2).MinRange = DayTypeDistributions.ElementAt(1).MaxRange;
+                DayTypeDistributions.ElementAt(2).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(2).CummProbability * 100);
+            }
+            else
+            {
+                DayTypeDistributions.ElementAt(2).MinRange = DayTypeDistributions.ElementAt(1).MaxRange + 1;
+                DayTypeDistributions.ElementAt(2).MaxRange = Convert.ToInt32(DayTypeDistributions.ElementAt(2).CummProbability * 100);
+            }
+
         }
         private void DistributionsOfDemand()
         {
-            for(int i=0; i<3;i++)
+            for (int i = 0; i < 3; i++)
             {
                 DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).CummProbability = DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).Probability;
-                DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).MinRange = 0;
+                DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).MinRange = 1;
                 DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).MaxRange = Convert.ToInt32(DemandDistributions.ElementAt(0).DayTypeDistributions.ElementAt(i).CummProbability * 100);
 
-                for(int j=1;j< DemandDistributions.Count;j++)
+                for (int j = 1; j < DemandDistributions.Count; j++)
                 {
                     if (DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).CummProbability == 1)
                         DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).CummProbability = 1;
                     else
-                        DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).CummProbability = DemandDistributions.ElementAt(j-1).DayTypeDistributions.ElementAt(i).CummProbability + DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).Probability;
+                        DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).CummProbability = DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).CummProbability + DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).Probability;
 
-                    if (DemandDistributions.ElementAt(j-1).DayTypeDistributions.ElementAt(i).MaxRange==100 || DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).MaxRange == 0)
+                    if (DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).MaxRange == 100 || DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).MaxRange == 0)
                     {
                         DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).MaxRange = 0;
                         DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).MinRange = 0;
@@ -68,7 +87,7 @@ namespace NewspaperSellerModels
                         DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).MinRange = DemandDistributions.ElementAt(j - 1).DayTypeDistributions.ElementAt(i).MaxRange + 1;
                         DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).MaxRange = Convert.ToInt32(DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(i).CummProbability * 100);
                     }
-                    
+
                 }
 
             }
@@ -76,7 +95,7 @@ namespace NewspaperSellerModels
         public void ReadINPUT(string textfilename)
         {
             string[] Separator = new string[1] { "," + " " };
-            string[] lines = System.IO.File.ReadAllLines("../../TestCases/"+textfilename+".txt");
+            string[] lines = System.IO.File.ReadAllLines("../../TestCases/" + textfilename + ".txt");
             NumOfNewspapers = Convert.ToInt32(lines.ElementAt(1));
             NumOfRecords = Convert.ToInt32(lines.ElementAt(4));
             PurchasePrice = Convert.ToDecimal(lines.ElementAt(7));
@@ -84,17 +103,17 @@ namespace NewspaperSellerModels
             ScrapPrice = Convert.ToDecimal(lines.ElementAt(10));
             UnitProfit = SellingPrice - PurchasePrice;
             string[] DayTypes = lines.ElementAt(16).Split(Separator, StringSplitOptions.None);
-            for(int i=0;i<3;i++)
+            for (int i = 0; i < 3; i++)
             {
                 DayTypeDistribution DTD = new DayTypeDistribution((Enums.DayType)(i), Convert.ToDecimal(DayTypes[i]));
                 DayTypeDistributions.Add(DTD);
             }
-            for(int i=19;i<lines.Count();i++)
+            for (int i = 19; i < lines.Count(); i++)
             {
                 DayTypes = lines.ElementAt(i).Split(Separator, StringSplitOptions.None);
                 DemandDistribution DD = new DemandDistribution();
                 DD.Demand = Convert.ToInt32(DayTypes[0]);
-                for (int j= 1; j <= 3; j++)
+                for (int j = 1; j <= 3; j++)
                 {
                     DayTypeDistribution DTD = new DayTypeDistribution((Enums.DayType)(j - 1), Convert.ToDecimal(DayTypes[j]));
                     DD.DayTypeDistributions.Add(DTD);
@@ -147,7 +166,7 @@ namespace NewspaperSellerModels
             foreach (SimulationCase Day in SimulationTable)
             {
                 if (Day.LostProfit != 0)
-                    PerformanceMeasures.DaysWithMoreDemand++ ;
+                    PerformanceMeasures.DaysWithMoreDemand++;
             }
         }
         private void DaysWithUnsoldPapers()
@@ -156,7 +175,7 @@ namespace NewspaperSellerModels
             foreach (SimulationCase Day in SimulationTable)
             {
                 if (Day.ScrapProfit != 0)
-                    PerformanceMeasures.DaysWithUnsoldPapers++ ;
+                    PerformanceMeasures.DaysWithUnsoldPapers++;
             }
         }
         public void FillPerformanceMeasures()
@@ -199,7 +218,7 @@ namespace NewspaperSellerModels
 
                 if (sc.NewsDayType == Enums.DayType.Good)
                 {
-                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    for (int j = 0; j < DemandDistributions.Count; j++)
                     {
                         if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(0).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(0).MaxRange)
                         {
@@ -213,7 +232,7 @@ namespace NewspaperSellerModels
 
                 else if (sc.NewsDayType == Enums.DayType.Fair)
                 {
-                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    for (int j = 0; j < DemandDistributions.Count; j++)
                     {
                         if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(1).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(1).MaxRange)
                         {
@@ -224,7 +243,7 @@ namespace NewspaperSellerModels
                 }
                 else
                 {
-                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    for (int j = 0; j < DemandDistributions.Count; j++)
                     {
                         if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(2).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(2).MaxRange)
                         {
@@ -235,16 +254,18 @@ namespace NewspaperSellerModels
 
 
 
-                sc.SalesProfit = sc.Demand * SellingPrice;
+
                 sc.DailyCost = NumOfNewspapers * PurchasePrice;
                 if (sc.Demand >= NumOfNewspapers)
                 {
+                    sc.SalesProfit = NumOfNewspapers * SellingPrice;
                     sc.LostProfit = (sc.Demand - NumOfNewspapers) * (SellingPrice - PurchasePrice);
                     sc.ScrapProfit = 0;
                 }
 
                 else if (NumOfNewspapers > sc.Demand)
                 {
+                    sc.SalesProfit = sc.Demand * SellingPrice;
                     sc.ScrapProfit = (NumOfNewspapers - sc.Demand) * SellingPrice;
                     sc.LostProfit = 0;
                 }
