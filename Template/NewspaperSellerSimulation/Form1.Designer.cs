@@ -31,7 +31,18 @@
             this.TestCasePath = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DaysDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Good1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fair1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Poor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Good2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fair2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Poor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.TypeofNewdays = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CumulativeProbability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RandomDigitAssignment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RandomfortypeofNewsday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,17 +53,6 @@
             this.lostprofit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salvage = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dailyprofit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeofNewdays = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CumulativeProbability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RandomDigitAssignment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DaysDemand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Good1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fair1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Poor1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Good2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fair2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Poor2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.TotalSalesRevenue = new System.Windows.Forms.TextBox();
             this.TotalCostofNewspapers = new System.Windows.Forms.TextBox();
@@ -110,6 +110,41 @@
             this.dataGridView1.Size = new System.Drawing.Size(312, 108);
             this.dataGridView1.TabIndex = 2;
             // 
+            // DaysDemand
+            // 
+            this.DaysDemand.HeaderText = "Demand";
+            this.DaysDemand.Name = "DaysDemand";
+            // 
+            // Good1
+            // 
+            this.Good1.HeaderText = "Good";
+            this.Good1.Name = "Good1";
+            // 
+            // Fair1
+            // 
+            this.Fair1.HeaderText = "Fair";
+            this.Fair1.Name = "Fair1";
+            // 
+            // Poor1
+            // 
+            this.Poor1.HeaderText = "Poor";
+            this.Poor1.Name = "Poor1";
+            // 
+            // Good2
+            // 
+            this.Good2.HeaderText = "Good";
+            this.Good2.Name = "Good2";
+            // 
+            // Fair2
+            // 
+            this.Fair2.HeaderText = "Fair";
+            this.Fair2.Name = "Fair2";
+            // 
+            // Poor2
+            // 
+            this.Poor2.HeaderText = "Poor";
+            this.Poor2.Name = "Poor2";
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -124,6 +159,26 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(312, 98);
             this.dataGridView2.TabIndex = 3;
+            // 
+            // TypeofNewdays
+            // 
+            this.TypeofNewdays.HeaderText = "Type of Newdays";
+            this.TypeofNewdays.Name = "TypeofNewdays";
+            // 
+            // Probability
+            // 
+            this.Probability.HeaderText = "Probability";
+            this.Probability.Name = "Probability";
+            // 
+            // CumulativeProbability
+            // 
+            this.CumulativeProbability.HeaderText = "Cumulative Probability";
+            this.CumulativeProbability.Name = "CumulativeProbability";
+            // 
+            // RandomDigitAssignment
+            // 
+            this.RandomDigitAssignment.HeaderText = "Random Digit Assignment";
+            this.RandomDigitAssignment.Name = "RandomDigitAssignment";
             // 
             // dataGridView3
             // 
@@ -146,6 +201,7 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(938, 518);
             this.dataGridView3.TabIndex = 4;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
             // Day
             // 
@@ -192,67 +248,12 @@
             this.dailyprofit.HeaderText = "Daily Profit";
             this.dailyprofit.Name = "dailyprofit";
             // 
-            // TypeofNewdays
-            // 
-            this.TypeofNewdays.HeaderText = "Type of Newdays";
-            this.TypeofNewdays.Name = "TypeofNewdays";
-            // 
-            // Probability
-            // 
-            this.Probability.HeaderText = "Probability";
-            this.Probability.Name = "Probability";
-            // 
-            // CumulativeProbability
-            // 
-            this.CumulativeProbability.HeaderText = "Cumulative Probability";
-            this.CumulativeProbability.Name = "CumulativeProbability";
-            // 
-            // RandomDigitAssignment
-            // 
-            this.RandomDigitAssignment.HeaderText = "Random Digit Assignment";
-            this.RandomDigitAssignment.Name = "RandomDigitAssignment";
-            // 
-            // DaysDemand
-            // 
-            this.DaysDemand.HeaderText = "Demand";
-            this.DaysDemand.Name = "DaysDemand";
-            // 
-            // Good1
-            // 
-            this.Good1.HeaderText = "Good";
-            this.Good1.Name = "Good1";
-            // 
-            // Fair1
-            // 
-            this.Fair1.HeaderText = "Fair";
-            this.Fair1.Name = "Fair1";
-            // 
-            // Poor1
-            // 
-            this.Poor1.HeaderText = "Poor";
-            this.Poor1.Name = "Poor1";
-            // 
-            // Good2
-            // 
-            this.Good2.HeaderText = "Good";
-            this.Good2.Name = "Good2";
-            // 
-            // Fair2
-            // 
-            this.Fair2.HeaderText = "Fair";
-            this.Fair2.Name = "Fair2";
-            // 
-            // Poor2
-            // 
-            this.Poor2.HeaderText = "Poor";
-            this.Poor2.Name = "Poor2";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 302);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(105, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Total Sales Revenue";
             // 
@@ -275,7 +276,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 325);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 13);
+            this.label3.Size = new System.Drawing.Size(131, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Total Cost of Newspapers";
             // 
@@ -291,7 +292,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 349);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 13);
+            this.label4.Size = new System.Drawing.Size(86, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Total Lost Profit ";
             // 
@@ -307,7 +308,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 371);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 13);
+            this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Total Salvage";
             // 
@@ -323,7 +324,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(9, 393);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
+            this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Net Profit";
             // 
@@ -339,7 +340,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(9, 417);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(193, 13);
+            this.label7.Size = new System.Drawing.Size(195, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Number of days having excess demand";
             // 
@@ -355,7 +356,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(9, 442);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(185, 13);
+            this.label8.Size = new System.Drawing.Size(188, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Number of days having unsold papers";
             // 
@@ -363,7 +364,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1281, 542);
+            this.ClientSize = new System.Drawing.Size(1276, 542);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox6);
@@ -385,6 +386,7 @@
             this.Controls.Add(this.TestCasePath);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

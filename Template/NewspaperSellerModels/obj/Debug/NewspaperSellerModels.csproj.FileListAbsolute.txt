@@ -32,3 +32,9 @@ E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\Newsp
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csprojResolveAssemblyReference.cache
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
 E:\year4\Modeling _ simulation\labs\Lab5 - Task2\Task2 - Template\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.dll
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\bin\Debug\NewspaperSellerModels.pdb
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csprojAssemblyReference.cache
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.csproj.CoreCompileInputs.cache
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.dll
+C:\Users\Caeser\Desktop\project\Newspaper-Seller-s-Problem\Newspaper-Seller-s-Problem\Template\NewspaperSellerModels\obj\Debug\NewspaperSellerModels.pdb
