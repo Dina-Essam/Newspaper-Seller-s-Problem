@@ -170,6 +170,88 @@ namespace NewspaperSellerModels
             DaysWithUnsoldPapers();
         }
         ///////////// SimulationTable ////////////////
+        public void fillTable()
+        {
+            Random rand = new Random();
+            for (int i = 1; i <= NumOfRecords; i++)
+            {
 
+                SimulationCase sc = new SimulationCase();
+                sc.DayNo = i;
+
+                sc.RandomNewsDayType = rand.Next(1, 101);
+                sc.RandomDemand = rand.Next(1, 101);
+
+                if (sc.RandomNewsDayType >= DayTypeDistributions.ElementAt(0).MinRange && sc.RandomNewsDayType <= DayTypeDistributions.ElementAt(0).MaxRange)
+                {
+                    sc.NewsDayType = Enums.DayType.Good;
+                }
+                else if (sc.RandomNewsDayType >= DayTypeDistributions.ElementAt(1).MinRange && sc.RandomNewsDayType <= DayTypeDistributions.ElementAt(1).MaxRange)
+                {
+                    sc.NewsDayType = Enums.DayType.Fair;
+                }
+                else
+                {
+                    sc.NewsDayType = Enums.DayType.Poor;
+
+                }
+
+
+                if (sc.NewsDayType == Enums.DayType.Good)
+                {
+                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    {
+                        if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(0).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(0).MaxRange)
+                        {
+                            sc.Demand = DemandDistributions.ElementAt(j).Demand;
+                        }
+                    }
+
+                }
+
+
+
+                else if (sc.NewsDayType == Enums.DayType.Fair)
+                {
+                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    {
+                        if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(1).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(1).MaxRange)
+                        {
+                            sc.Demand = DemandDistributions.ElementAt(j).Demand;
+                        }
+                    }
+
+                }
+                else
+                {
+                    for (int j = 1; j < DemandDistributions.Count; j++)
+                    {
+                        if (sc.RandomDemand >= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(2).MinRange && sc.RandomDemand <= DemandDistributions.ElementAt(j).DayTypeDistributions.ElementAt(2).MaxRange)
+                        {
+                            sc.Demand = DemandDistributions.ElementAt(j).Demand;
+                        }
+                    }
+                }
+
+
+
+                sc.SalesProfit = sc.Demand * SellingPrice;
+                sc.DailyCost = NumOfNewspapers * PurchasePrice;
+                if (sc.Demand >= NumOfNewspapers)
+                {
+                    sc.LostProfit = (sc.Demand - NumOfNewspapers) * (SellingPrice - PurchasePrice);
+                    sc.ScrapProfit = 0;
+                }
+
+                else if (NumOfNewspapers > sc.Demand)
+                {
+                    sc.ScrapProfit = (NumOfNewspapers - sc.Demand) * SellingPrice;
+                    sc.LostProfit = 0;
+                }
+                sc.DailyNetProfit = sc.SalesProfit - sc.DailyCost - sc.LostProfit + sc.ScrapProfit;
+                SimulationTable.Add(sc);
+            }
+
+        }
     }
 }

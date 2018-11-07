@@ -23,11 +23,12 @@ namespace NewspaperSellerSimulation
         private void TestCasePath_SelectedIndexChanged(object sender, EventArgs e)
         {
             SS.ReadINPUT(TestCasePath.SelectedItem.ToString());
-            //SS.FillPerformanceMeasures();
+            SS.fillTable();
+            SS.FillPerformanceMeasures();
             String TestingResult = TestingManager.Test(SS,Constants.FileNames.TestCase1);
             MessageBox.Show(TestingResult);
         }
 
-        
+                
     }
 }
